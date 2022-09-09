@@ -3,9 +3,7 @@ package homeWork_task3;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 public class FuzzySearchTest {
-
 
     @Test
     public void fuzzySearchTest() {
@@ -21,5 +19,11 @@ public class FuzzySearchTest {
         Assert.assertFalse(FuzzySearch.fuzzySearch("lw", "cartwheel"));
 
         Assert.assertFalse(FuzzySearch.fuzzySearch("cwheeel", "cartwheel"));
+
+        Assert.assertFalse(FuzzySearch.fuzzySearch("abcabaaa", "aaacbscasdasdabaa"));
+
+        Assert.assertFalse(FuzzySearch.fuzzySearch("city", "Cities"));
+
+        Assert.assertFalse(FuzzySearch.fuzzySearch("independence", "dependence"));
     }
 }

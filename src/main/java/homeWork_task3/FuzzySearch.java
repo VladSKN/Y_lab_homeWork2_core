@@ -8,7 +8,7 @@ Task3
             fuzzySearch("cwhl", "cartwheel"); // true
             fuzzySearch("cwhee", "cartwheel"); // true
             fuzzySearch("cartwheel", "cartwheel"); // true
-            fuzzySearch("cwheeel", "cartwheel"); // false -  разобрать этот кейс
+            fuzzySearch("cwheeel", "cartwheel"); // false
             fuzzySearch("lw", "cartwheel"); // false
  */
 
@@ -19,13 +19,21 @@ public class FuzzySearch {
         System.out.println(fuzzySearch("lw", "cartwheel"));
     }
 
+    /**
+     * Для решения данной задачи был выбран жадный алгоритм
+     * с двумя независимыми указателями, временная сложность
+     * данного алгоритма O( n )
+     *
+     * @return boolean true or false
+     */
     public static boolean fuzzySearch(String substr, String str) {
-        int pointer1 = 0;
-        int pointer2 = 0;
 
-        if(substr == null || str == null){
+        if (substr == null || str == null) {
             throw new IllegalArgumentException();
         }
+
+        int pointer1 = 0;
+        int pointer2 = 0;
 
         while (pointer2 != str.length() && pointer1 != substr.length()) {
             if (Objects.equals(substr.charAt(pointer1), str.charAt(pointer2))) {
