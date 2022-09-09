@@ -24,10 +24,10 @@ public class ArraysSumTwoElement {
      * Если в массиве нет пары чисел которые в сумме дают число sum
      * возвращается [0, 0]
      */
-    private static int[] twoSumStream(int[] array, int sum) {
+    private static int[] twoSumStream(int[] input, int targetValue) {
         int[] result = new int[2];
-        Arrays.stream(array)
-                .forEach(el1 -> Arrays.stream(array).filter(el2 -> el2 + el1 == sum)
+        Arrays.stream(input)
+                .forEach(el1 -> Arrays.stream(input).filter(el2 -> el2 + el1 == targetValue)
                         .forEach(found -> {
                             result[0] = found;
                             result[1] = el1;
