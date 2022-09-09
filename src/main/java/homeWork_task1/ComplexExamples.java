@@ -134,9 +134,6 @@ public class ComplexExamples {
                         TreeMap::new,
                         Collectors.counting()));
 
-        for (Map.Entry<String, Long> stringLongEntry : collect.entrySet()) {
-            System.out.println("Key: " + stringLongEntry.getKey());
-            System.out.println("Value:" + stringLongEntry.getValue());
-        }
+        collect.forEach((k, v) -> System.out.println("Key: " + k + "\n" + "Value:" + v));
     }
 }
