@@ -12,9 +12,11 @@ Task3
             fuzzySearch("lw", "cartwheel"); // false
  */
 
+import java.util.Objects;
+
 public class FuzzySearch {
     public static void main(String[] args) {
-        System.out.println(fuzzySearch("car", "ca6$$#_rtwheel"));
+        System.out.println(fuzzySearch("lw", "cartwheel"));
     }
 
     public static boolean fuzzySearch(String substr, String str) {
@@ -26,7 +28,7 @@ public class FuzzySearch {
         }
 
         while (pointer2 != str.length() && pointer1 != substr.length()) {
-            if (substr.charAt(pointer1) == str.charAt(pointer2)) {
+            if (Objects.equals(substr.charAt(pointer1), str.charAt(pointer2))) {
                 pointer1++;
             }
             pointer2++;
