@@ -128,6 +128,7 @@ public class ComplexExamples {
         System.out.println();
 
         Map<String, Long> collect = Arrays.stream(RAW_DATA)
+                .filter(Objects::nonNull)
                 .distinct()
                 .collect(Collectors.groupingBy(
                         Person::getName,
